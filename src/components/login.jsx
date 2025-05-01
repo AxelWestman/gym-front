@@ -33,6 +33,8 @@ const Login_component = () => {
 
       const responseData = await response.json();  // Usa un nombre diferente
       console.log('Login exitoso:', responseData.data[0]);
+      const nombre = responseData.data[0].nombre_completo;
+      alert(`Bienvenido ${nombre} 💪`)
       // Aquí podrías redirigir al usuario o guardar el token de autenticación
       
     } catch (error) {
