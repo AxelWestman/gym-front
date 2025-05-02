@@ -2,9 +2,34 @@
     .pagina{
         width: 100%;
         min-height: 100lvh;
-        background-color: rgb(9, 94, 253) !important;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .logo-hamburguesa{
+        font-size: 35px;
+        color:white
+    }
+
+    .logo_logout{
+        font-size: 33px;
+        color:white
+    }
+
+    .bg-body-tertiary{
+        width: 100% !important;
+        background-color: #0C4C8A !important;
+    }
+
+    .container-home{
+        width: 100%;
+        height: 100lvh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        /*border: 1px solid red;*/
     }

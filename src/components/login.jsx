@@ -30,7 +30,7 @@ const Login_component = () => {
 
     try {
       // 4. Enviar datos al backend
-      const response = await fetch('http://localhost:3000/api/postLogueo', {
+      const response = await fetch('http://192.168.0.163:3000/api/postLogueo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,6 @@ const Login_component = () => {
       const responseData = await response.json();  // Usa un nombre diferente
       console.log('Login exitoso:', responseData.data[0]);
       const nombre = responseData.data[0].nombre_completo;
-      alert(`Bienvenido ${nombre} 💪`)
       localStorage.setItem("usuario", nombre)
       navigate('/home', { replace: true }); 
       // Aquí podrías redirigir al usuario o guardar el token de autenticación
@@ -53,9 +52,7 @@ const Login_component = () => {
     } catch (error) {
       console.error('Error:', error);
       alert('Credenciales incorrectas');
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
     // Resto del código de envío igual que antes
