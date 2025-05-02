@@ -1,30 +1,28 @@
-import "../styles/home.css";
+import "../styles/rutina.css";
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosLogOut } from "react-icons/io";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+const Rutina_component = () => {
 
-const Home_component = () => {
-  const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    const deslogueo = () => {
+      localStorage.removeItem("usuario");
+      window.location.href = "/"; // Redirigir a la página de inicio de sesión
+    }
 
-  const usuario = localStorage.getItem("usuario");
+    return (
 
-  const deslogueo = () => {
-    localStorage.removeItem("usuario");
-    window.location.href = "/"; // Redirigir a la página de inicio de sesión
-  }
-
-  return (
-    <>
-      <section className="pagina">
+        <>
+             <section className="pagina">
         <Container>
           <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
@@ -42,7 +40,7 @@ const Home_component = () => {
             <Offcanvas.Title>Gimnasio Prueba</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-           <ul>
+          <ul>
            <Link to="/home" className="links"><li >Inicio</li></Link>
            <Link to="/rutina" className="links"><li >Rutina</li></Link>
                 <li>Ejercicios</li>
@@ -53,11 +51,14 @@ const Home_component = () => {
           </Offcanvas.Body>
         </Offcanvas>
         <div className="container-home">
-            <h1>Bienvenido {usuario}! 💪</h1>
+            <h1>Rutina 🏋️‍♀️</h1>
         </div>  
       </section>
-    </>
-  );
-};
+        </>
 
-export default Home_component;
+    )
+
+}
+
+
+export default Rutina_component;
