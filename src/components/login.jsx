@@ -3,11 +3,22 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from 'react-bootstrap/Card';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'; // Asegúrate de importar useEffect
+import Home from "../components/home";
 
 const Login_component = () => {
+  const navigate = useNavigate();
 
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  useEffect(() => {
+    const token = localStorage.getItem('usuario');
+    if (token) {
+      navigate('/home', { replace: true });
+    }
+  }, [navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,11 +46,15 @@ const Login_component = () => {
       console.log('Login exitoso:', responseData.data[0]);
       const nombre = responseData.data[0].nombre_completo;
       alert(`Bienvenido ${nombre} 💪`)
+      localStorage.setItem("usuario", nombre)
+      navigate('/home', { replace: true }); 
       // Aquí podrías redirigir al usuario o guardar el token de autenticación
       
     } catch (error) {
       console.error('Error:', error);
-      // Aquí podrías mostrar un mensaje de error al usuario
+      alert('Credenciales incorrectas');
+    } finally {
+      setLoading(false);
     }
   };
 

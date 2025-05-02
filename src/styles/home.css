@@ -1,0 +1,10 @@
+
+    .pagina{
+        width: 100%;
+        min-height: 100lvh;
+        background-color: rgb(9, 94, 253) !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }

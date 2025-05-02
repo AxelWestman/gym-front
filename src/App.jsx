@@ -1,16 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Login_component from './components/login'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './App.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from "./components/home";
+import Login from "./components/login";
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <Login_component />
+    <BrowserRouter>
+      <Routes>
+      <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        {/* Redirigir por defecto al login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
