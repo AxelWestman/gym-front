@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react'; // Asegúrate de importar useEffect
-import Home from "../components/home";
+
 
 const Login_component = () => {
   const navigate = useNavigate();
