@@ -54,13 +54,9 @@ const Clientes_component = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <ul>
-              <Link to="/homecoach" className="links">
-                <li>Inicio</li>
-              </Link>
-              <Link to="/clientes" className="links">
-                <li>Clientes</li>
-              </Link>
-              <li>Ejercicios</li>
+              <Link to="/homecoach" className="links"><li>Inicio</li></Link>
+              <Link to="/clientes" className="links"><li>Clientes</li></Link>
+              <Link to="/rutinasyejercicios" className="links"><li >Rutinas y ejercicios</li></Link>
               <li>Alimentación</li>
               <li>Progreso</li>
               <li>Configuración</li>

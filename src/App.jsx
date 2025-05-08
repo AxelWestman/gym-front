@@ -7,6 +7,7 @@ import Login from "./components/login";
 import Rutina from "./components/rutina";
 import Home_Coach from "./components/home_coach";
 import Clientes from "./components/clientes";
+import RutinasYEjercicios from './components/rutinas_y_ejercicios';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
         <Route path="/rutina" element={<Rutina />} />
         <Route path="/homecoach" element={<Home_Coach />} />
         <Route path="/clientes" element={<Clientes />} />
+        <Route path="/rutinasyejercicios" element={<RutinasYEjercicios />} />
         {/* Redirigir por defecto al login */}
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
