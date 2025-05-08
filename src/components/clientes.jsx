@@ -64,8 +64,9 @@ const Clientes_component = () => {
           </Offcanvas.Body>
         </Offcanvas>
         <div className="container-home">
+          <h1>Clientes</h1>
           <div style={{ width: "100%", overflowX: "auto" }}>
-            <div style={{ minWidth: "700px", margin: "0 auto" }}>
+            <div style={{ minWidth: "700px", margin: "0 auto", textAlign: "center" }}>
               <Table striped bordered hover className="w-100">
                 <thead>
                   <tr>

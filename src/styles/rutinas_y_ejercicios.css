@@ -40,3 +40,25 @@ li{
     justify-content: center;
     /*border: 1px solid red;*/
 }
+
+.container-rutinas-ejercicios{
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 20px;
+}
+
+.contenedor-tablas{
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 40%;
+}
+
+
+
+/* table{
+    width: 44%;
+} */

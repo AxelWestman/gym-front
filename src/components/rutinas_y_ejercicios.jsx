@@ -6,25 +6,47 @@ import Navbar from "react-bootstrap/Navbar";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosLogOut } from "react-icons/io";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-//import axios from "axios";
-
+import axios from "axios";
+import Table from "react-bootstrap/Table";
 
 const RutinasYEjercicios = () => {
+  const [show, setShow] = useState(false);
 
-    const [show, setShow] = useState(false);
-    
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-      const deslogueo = () => {
-        localStorage.removeItem("usuario");
-        window.location.href = "/"; // Redirigir a la página de inicio de sesión
-      };
+  const [obtenerEjercicios, setObtenerEjercicios] = useState(null);
 
-    return(
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/getEjercicios")
+      .then((response) => {
+        console.log("Datos recibidos:", response.data.data); // 👈 importante
+        setObtenerEjercicios(response.data.data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
-        <>
-        <section className="pagina">
+  const [obtenerRutinas, setObtenerRutinas] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/getRutinas")
+      .then((response) => {
+        console.log("Datos recibidos:", response.data.data); // 👈 importante
+        setObtenerRutinas(response.data.data);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const deslogueo = () => {
+    localStorage.removeItem("usuario");
+    window.location.href = "/"; // Redirigir a la página de inicio de sesión
+  };
+
+  return (
+    <>
+      <section className="pagina">
         <Container>
           <Navbar fixed="top" className="bg-body-tertiary">
             <Container>
@@ -43,9 +65,15 @@ const RutinasYEjercicios = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <ul>
-              <Link to="/homecoach" className="links"><li>Inicio</li></Link>
-              <Link to="/clientes" className="links"><li>Clientes</li></Link>
-              <Link to="/rutinasyejercicios" className="links"><li >Rutinas y ejercicios</li></Link>
+              <Link to="/homecoach" className="links">
+                <li>Inicio</li>
+              </Link>
+              <Link to="/clientes" className="links">
+                <li>Clientes</li>
+              </Link>
+              <Link to="/rutinasyejercicios" className="links">
+                <li>Rutinas y ejercicios</li>
+              </Link>
               <li>Alimentación</li>
               <li>Progreso</li>
               <li>Configuración</li>
@@ -53,14 +81,75 @@ const RutinasYEjercicios = () => {
           </Offcanvas.Body>
         </Offcanvas>
         <div className="container-home">
-            <h1>Rutinas y ejercicios</h1> 
-            
+          <h1>Rutinas y ejercicios</h1>
+          <div class="container-rutinas-ejercicios">
+            <div className="contenedor-tablas">
+              <h2>Ejercicios</h2>
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombre del ejercicio</th>
+                    <th>Descripción</th>
+                    <th>Grupo muscular</th>
+                    <th>Equipamiento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {obtenerEjercicios ? (
+                    obtenerEjercicios.map((ejercicio, index) => (
+                      <tr key={index}>
+                        <td>{ejercicio.idejercicio}</td>
+                        <td>{ejercicio.nombre_ejercicio}</td>
+                        <td>{ejercicio.descripcion}</td>
+                        <td>{ejercicio.grupo_muscular}</td>
+                        <td>{ejercicio.quipamiento_necesario}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="6">Cargando datos...</td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </div>
+            <div className="contenedor-tablas">
+              <h2>Rutinas</h2>
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombre de la rutina</th>
+                    <th>Descripción</th>
+                    <th>Duración semanal</th>
+                    <th>Dificultad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {obtenerRutinas ? (
+                    obtenerRutinas.map((rutina, index) => (
+                      <tr key={index}>
+                        <td>{rutina.idrutina}</td>
+                        <td>{rutina.nombre_rutina}</td>
+                        <td>{rutina.descripcion}</td>
+                        <td>{rutina.duracion_semanas}</td>
+                        <td>{rutina.nivel_dificultad}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="6">Cargando datos...</td>
+                    </tr>
+                  )}
+                </tbody>
+              </Table>
+            </div>
+          </div>
         </div>
-        </section>
-        </>
-
-    )
-
-}
+      </section>
+    </>
+  );
+};
 
 export default RutinasYEjercicios;
