@@ -37,7 +37,7 @@ const Clientes_component = () => {
     <>
       <section className="pagina">
         <Container>
-          <Navbar fixed="top" className="bg-body-tertiary">
+          <Navbar className="bg-body-tertiary">
             <Container>
               <FiAlignJustify
                 className="logo-hamburguesa"

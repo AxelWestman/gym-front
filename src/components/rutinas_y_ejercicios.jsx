@@ -8,6 +8,8 @@ import { IoIosLogOut } from "react-icons/io";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const RutinasYEjercicios = () => {
   const [show, setShow] = useState(false);
@@ -48,7 +50,7 @@ const RutinasYEjercicios = () => {
     <>
       <section className="pagina">
         <Container>
-          <Navbar fixed="top" className="bg-body-tertiary">
+          <Navbar className="bg-body-tertiary">
             <Container>
               <FiAlignJustify
                 className="logo-hamburguesa"
@@ -82,7 +84,7 @@ const RutinasYEjercicios = () => {
         </Offcanvas>
         <div className="container-home">
           <h1>Rutinas y ejercicios</h1>
-          <div class="container-rutinas-ejercicios">
+          <div class="container-rutinas-ejercicios" style={{ overflowX: "auto" }}>
             <div className="contenedor-tablas">
               <h2>Ejercicios</h2>
               <Table striped bordered hover>
@@ -144,6 +146,40 @@ const RutinasYEjercicios = () => {
                   )}
                 </tbody>
               </Table>
+            </div>
+          </div>
+          <div className="container-formularios">
+            <div className="estructura-formulario">
+              <h2>Añadir ejercicios</h2>
+              <div className="añadir-ejercicios-container">
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Nombre del ejercicio</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Grupo muscular</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Equipamiento</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Descripción del ejercicio</Form.Label>
+                  <Form.Control type="text" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </Form>
+              </div>
+            </div>
+            <div className="">
+              <h2>Añadir rutinas</h2>
             </div>
           </div>
         </div>
