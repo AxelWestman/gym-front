@@ -1,11 +1,11 @@
-import "../styles/login.css"; // ✅ Correcto (importación directa para CSS normal)import Button from 'react-bootstrap/Button';
+import styles from "../styles/Login.module.css"; // ✅ Correcto (importación directa para CSS normal)import Button from 'react-bootstrap/Button';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from 'react-bootstrap/Card';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react'; // Asegúrate de importar useEffect
-import Home from "../components/home";
+import Home from "./Home";
 
 const Login_component = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Login_component = () => {
 
     try {
       // 4. Enviar datos al backend
-      const response = await fetch('http://192.168.0.163:3000/api/postLogueo', {
+      const response = await fetch('http://192.168.0.243:3000/api/postLogueo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,17 +61,17 @@ const Login_component = () => {
 
   return (
     <>
-      <section className="pagina-entera">
-        <h1 className="texto-h1">Gimnasio proyecto</h1>
-        <Card className="carta">
-        <Form className="formulario" onSubmit={handleSubmit}>
+      <section className={styles.paginaEntera}>
+        <h1 className={styles.textoH1}>Gimnasio proyecto</h1>
+        <Card className={styles.carta}>
+        <Form className={styles.formulario} onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className="texto-form">Email</Form.Label>
-            <Form.Control type="email" ref={emailRef} placeholder="Enter email" />
+            <Form.Label className={styles.textoForm}>Email</Form.Label>
+            <Form.Control type={styles.email} ref={emailRef} placeholder="Enter email" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label className="texto-form">Contraseña</Form.Label>
-            <Form.Control type="password" ref={passwordRef} placeholder="Password" />
+            <Form.Label className={styles.textoForm}>Contraseña</Form.Label>
+            <Form.Control type={styles.password} ref={passwordRef} placeholder="Password" />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit

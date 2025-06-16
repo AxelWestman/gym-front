@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-.pagina-entera{
+.paginaEntera{
     width: 100%;
     min-height: 100lvh;
     /*background-color: rgb(9, 94, 253);*/
@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-.pagina-entera::before {
+.paginaEntera::before {
     content: '';
     position: absolute;
     top: 0;
@@ -23,7 +23,7 @@
     z-index: 1; /* Solo por debajo del contenido */
   }
 
-  .texto-form{
+  .textoForm{
     color: white !important;
     }
 
@@ -33,7 +33,7 @@
     font-style: normal;
   }
 
-.texto-h1{
+.textoH1{
     color:white;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 60px;
@@ -62,7 +62,7 @@
 
 @media(min-width: 1024px){
 
-    .pagina-entera{
+    .paginaEntera{
         background-image: url("../assets/img/gimnasio.jpg");
         background-size: cover;
     }

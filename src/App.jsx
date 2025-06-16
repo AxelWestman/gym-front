@@ -2,9 +2,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Home from "./components/home";
-import Login from "./components/login";
-import Rutina from "./components/rutina";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Rutina from "./components/Rutina";
 
 function App() {
   // const [count, setCount] = useState(0)

@@ -1,0 +1,19 @@
+.bgBodyTertiary{
+        width: 100% !important;
+        background-color: #0C4C8A !important;
+    }
+
+.logoHamburguesa{
+        font-size: 35px;
+        color:white
+    }
+
+.logoLogout{
+        font-size: 33px;
+        color:white
+    }
+
+.links{
+        text-decoration: none;
+        color: black;
+    }
