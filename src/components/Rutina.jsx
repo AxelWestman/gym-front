@@ -7,14 +7,14 @@ const Rutina_component = () => {
 
     return (
 
-        <>
-             <section className={styles.pagina}>
-        <Navbar_component />
-        <div className={styles.containerRutina}>
+      <>
+        <section className={styles.pagina}>
+          <Navbar_component />
+          <div className={styles.containerRutina}>
             <h1>Rutina 🏋️‍♀️</h1>
-        </div>  
-      </section>
-        </>
+          </div>  
+        </section>
+      </>
 
     )
 
