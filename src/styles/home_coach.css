@@ -4,7 +4,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;   
 }
 
 .logo-hamburguesa{
@@ -37,7 +37,7 @@ li{
     list-style: none;
 }
 
-.containerRutina{
+.container-home{
     width: 100%;
     height: 100lvh;
     display: flex;

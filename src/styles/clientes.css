@@ -4,7 +4,7 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;  
 }
 
 .logo-hamburguesa{
@@ -37,12 +37,24 @@ li{
     list-style: none;
 }
 
-.containerRutina{
+.container-home {
     width: 100%;
     height: 100lvh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* mejor que center si usas tablas largas */
+    overflow-x: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+
+/* .tabla-clientes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /*border: 1px solid red;*/
-}
+} */

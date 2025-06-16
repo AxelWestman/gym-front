@@ -1,0 +1,120 @@
+.pagina{
+    width: 100%;
+    min-height: 100lvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.logo-hamburguesa{
+    font-size: 35px;
+    color:white
+}
+
+.logo_logout{
+    font-size: 33px;
+    color:white
+}
+
+.bg-body-tertiary{
+    width: 100% !important;
+    background-color: #0C4C8A !important;
+    padding: 0px;
+    height: 50px;
+}
+
+.container{
+    padding: 0px;
+    margin: 0px;
+    max-width: none;
+}
+
+
+
+.links{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+/* .container-home{
+    width: 100%;
+    height: 100lvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+} */
+
+.container-home {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* mejor que center si usas tablas largas */
+    overflow-x: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: 1px solid orange;
+  }
+  
+
+.container-rutinas-ejercicios{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* border: 1px solid green; */
+}
+
+.contenedor-tablas{
+    /* border: 1px solid red; */
+    text-align: center;
+    width: 40%;
+    min-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container-formularios{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.estructura-formulario{
+    width: 100%;
+}
+
+.añadir-ejercicios-container{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+Form{
+    width: 100%;
+}
+
+.mb-3{
+ text-align: start;
+}
+
+
+
+/* table{
+    width: 44%;
+} */
