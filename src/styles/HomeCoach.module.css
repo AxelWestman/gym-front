@@ -7,7 +7,7 @@
     align-items: center;   
 }
 
-.logo-hamburguesa{
+.logoHamburguesa{
     font-size: 35px;
     color:white
 }
@@ -17,7 +17,7 @@
     color:white
 }
 
-.bg-body-tertiary{
+.bgBodyTertiary{
     width: 100% !important;
     background-color: #0C4C8A !important;
     padding: 0px;
@@ -37,7 +37,7 @@ li{
     list-style: none;
 }
 
-.container-home{
+.containerHome{
     width: 100%;
     height: 100lvh;
     display: flex;

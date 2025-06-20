@@ -1,8 +1,9 @@
-import "../styles/clientes.css";
+import styles from  "../styles/Clientes.module.css";
 import { useState, useEffect } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import NavbarCoach_component from "../components/NavbarCoach";
 import Navbar from "react-bootstrap/Navbar";
 import { FiAlignJustify } from "react-icons/fi";
 import { IoIosLogOut } from "react-icons/io";
@@ -36,33 +37,7 @@ const Clientes_component = () => {
   return (
     <>
       <section className="pagina">
-        <Container>
-          <Navbar className="bg-body-tertiary">
-            <Container>
-              <FiAlignJustify
-                className="logo-hamburguesa"
-                onClick={handleShow}
-              />
-              <IoIosLogOut className="logo_logout" onClick={deslogueo} />
-            </Container>
-          </Navbar>
-        </Container>
-
-        <Offcanvas show={show} onHide={handleClose}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>Gimnasio Prueba</Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body>
-            <ul>
-              <Link to="/homecoach" className="links"><li>Inicio</li></Link>
-              <Link to="/clientes" className="links"><li>Clientes</li></Link>
-              <Link to="/rutinasyejercicios" className="links"><li >Rutinas y ejercicios</li></Link>
-              <li>Alimentación</li>
-              <li>Progreso</li>
-              <li>Configuración</li>
-            </ul>
-          </Offcanvas.Body>
-        </Offcanvas>
+        <NavbarCoach_component />
         <div className="container-home">
           <h1>Clientes</h1>
           <div style={{ width: "100%", overflowX: "auto" }}>

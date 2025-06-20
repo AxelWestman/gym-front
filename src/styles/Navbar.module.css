@@ -6,11 +6,13 @@
 .logoHamburguesa{
         font-size: 35px;
         color:white;
+        margin-left: 15px;
     }
 
 .logoLogout{
         font-size: 33px;
-        color:white
+        color:white;
+        margin-right: 15px;
     }
 
 .links{
